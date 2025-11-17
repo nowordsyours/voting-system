@@ -1,0 +1,400 @@
+/* STOP SCROLLING */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* MAIN LAYOUT */
+.layout {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+/* LEFT SIDE */
+.left {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+/* BACKGROUND IMAGE SLIDE-IN */
+.left::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: url("https://www.aljazeera.com/wp-content/uploads/2024/05/AFP__20240507__34R37R8__v2__Preview__IndiaVotingLoneVoter-1715147266.jpg?resize=1200%2C630");
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+
+  animation: slideImage 1.8s ease-out forwards;
+}
+
+/* DARK GRADIENT */
+.left::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(circle at center,
+      rgba(0,0,0,0.15) 0%,
+      rgba(0,0,0,0.45) 55%,
+      rgba(0,0,0,0.65) 100%),
+    linear-gradient(to bottom,
+      rgba(0,0,0,0.50),
+      rgba(0,0,0,0.75));
+
+  z-index: 2;
+}
+
+/* LEFT CONTENT */
+.blur-panel {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+  padding: 45px 55px;
+  animation: fadeUp 1.2s ease-out;
+}
+
+/* TITLE */
+.title {
+  font-size: 48px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-top: 10px;
+  letter-spacing: -0.5px;
+  text-shadow: 0 3px 10px rgba(0,0,0,0.35);
+  animation: slideLeft 1s ease-out;
+}
+
+/* SUBTITLE */
+.subtitle {
+  font-size: 19px;
+  margin-top: 6px;
+  color: #e5e5e5;
+  text-shadow: 0px 2px 6px rgba(0,0,0,0.25);
+  animation: slideLeft 1.1s ease-out;
+}
+
+/* STATS */
+.stats-row {
+  margin-top: 55px;
+  display: flex;
+  justify-content: center;
+  gap: 55px;
+  animation: fadeUp 1.4s ease-out;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-item h3 {
+  font-size: 20px;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+/* GLASS STAT BOX */
+.stat-box {
+  width: 160px;
+  height: 75px;
+
+  background: rgba(255, 255, 255, 0.20);
+  backdrop-filter: blur(18px);
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.35);
+
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+  transition: 0.35s cubic-bezier(0.23,1,0.32,1);
+}
+
+.stat-box:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0px 18px 50px rgba(0,0,0,0.40);
+  background: rgba(255,255,255,0.32);
+}
+
+/* FOOTER */
+.footer-text {
+  margin-top: auto;
+  width: 75%;
+  text-align: center;
+  padding-bottom: 30px;
+  font-size: 15px;
+  line-height: 1.4;
+  color: #f2f2f2;
+  text-shadow: 0px 2px 6px rgba(0,0,0,0.35);
+  animation: fadeUp 1.8s ease-out;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ------------------------------ */
+/*     RIGHT SIDE (LOGIN)         */
+/* ------------------------------ */
+
+/* Right column container */
+.right {
+  width: 50%;
+  min-width: 480px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100%;
+  padding: 0 70px;
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  margin-right: 40px;       /* ⭐ slight right shift */
+}
+
+
+
+/* --- Login card styles (embedded so file is complete) --- */
+
+/* Wrapper (center inside right column) */
+.login-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  background: transparent;
+}
+
+/* Card */
+.login-card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 480px;             /* bigger card */
+  border-radius: 30px;
+
+  padding: 55px;                /* more height */
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.10);
+  border: 1px solid #e9e9e9;
+  text-align: center;
+
+  margin: 0 auto;               /* center in right column */
+}
+
+
+/* Icon */
+.icon-box {
+  width: 90px;
+  height: 90px;
+  background: #000000; /* black icon circle for BW mode */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-bottom: 25px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  color: #ffffff;
+}
+
+/* Titles */
+.login-card .title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #111111;
+  margin: 0;
+}
+
+.subtext {
+  color: #666666;
+  margin-top: 8px;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  margin-top: 25px;
+  background: #f1f1f1;
+  padding: 4px;
+  border-radius: 14px;
+}
+
+.tab {
+  flex: 1;
+  padding: 10px 0;
+  border-radius: 10px;
+  background: transparent;
+  border: none;
+  font-weight: 600;
+  color: #666;
+  cursor: pointer;
+}
+
+.tab.active {
+  background: #ffffff;
+  color: #111111;
+  box-shadow: 0 3px 5px rgba(0,0,0,0.06);
+}
+
+/* Form */
+.form {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: stretch;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 6px;
+  display: block;
+  text-align: left;
+}
+
+.input {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: 1px solid #dcdcdc;
+  background: #f7f7f7;
+  font-size: 15px;
+  color: #222;
+  box-sizing: border-box;
+}
+
+.input:focus {
+  background: #ffffff;
+  border-color: #000000;
+  box-shadow: 0 0 6px rgba(0,0,0,0.10);
+}
+
+/* Button */
+.submit-btn {
+  width: 100%;
+  padding: 14px 0;
+  background: #000000;
+  border: none;
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 600;
+  border-radius: 14px;
+  cursor: pointer;
+  margin-top: 6px;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.12);
+}
+
+.submit-btn:hover {
+  background: #111111;
+}
+
+/* Footer inside card */
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 22px;
+  font-size: 14px;
+  color: #666666;
+}
+
+/* Small shield icon */
+.shield {
+  width: 18px;
+  height: 18px;
+  color: #666666;
+}
+
+/* ANIMATIONS */
+@keyframes slideImage {
+  0% {
+    background-position: 120% center;
+    transform: scale(1.2);
+  }
+  100% {
+    background-position: center;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideLeft {
+  0% { opacity: 0; transform: translateX(-25px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+/* NUMBER INSIDE STAT BOX */
+.stat-number {
+  font-size: 30px;
+  font-weight: 700;
+  color: #ffffff;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-shadow: 0px 2px 10px rgba(0,0,0,0.5);
+  animation: fadeUp 1.4s ease-out;
+}
+.footer {
+  margin-top: 25px;
+}
+
+.title {
+  color: #000 !important;
+}
+
+.subtitle {
+  color: #444 !important;
+}
+.secure {
+  color: #000 !important;      /* Make text black */
+  font-weight: 500 !important; /* Slightly bold */
+  opacity: 1 !important;       /* Remove fade issue */
+}
+
+.shield {
+  color: #000 !important;      /* Icon black */
+  opacity: 1 !important;
+}
+/* FIX: Make left side title & subtitle clearly visible */
+.title {
+  color: #ffffff !important;       /* Pure white */
+  text-shadow: 0 2px 8px rgba(0,0,0,0.55) !important;
+  opacity: 1 !important;
+}
+
+.subtitle {
+  color: #eaeaea !important;       /* Light white */
+  text-shadow: 0 2px 6px rgba(0,0,0,0.45) !important;
+  opacity: 1 !important;
+}
